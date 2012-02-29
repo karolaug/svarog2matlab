@@ -1,4 +1,4 @@
-function [dane, info] = ImportSvarog(nazwa)
+function info = ImportSvarogXML(nazwa)
     fit = fopen([nazwa '.xml'],'rb');
     xml=fread(fit,'*char');
     xml = xml';
@@ -11,6 +11,9 @@ function [dane, info] = ImportSvarog(nazwa)
     info.samplecount = str2double(samplecount{1});
     firstsampletimestamp = regexp(xml, '<rs:firstSampleTimestamp>(.*?)</rs:firstSampleTimestamp>', 'tokens');
     info.firstsampletimestamp = str2double(firstsampletimestamp{1});
+
+
+function dane = ImportSvarogRAW(nazwa)
     fit = fopen([nazwa '.raw'], 'rb');
     dane = fread(fit, 'double');
     fclose(fit);
