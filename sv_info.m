@@ -1,5 +1,15 @@
-function info = ImportSvarogXML(nazwa)
-    fit = fopen([nazwa '.xml'],'rb');
+%This program is free software: you can redistribute it and/or modify
+%it under the terms of the GNU General Public License as published by
+%the Free Software Foundation, either version 3 of the License, or
+%(at your option) any later version.
+%Copyright © 2012 Karol Augustin
+%License can be found in license
+
+
+
+
+function info = sv_info(file_name)
+    fit = fopen([file_name '.xml'],'rb');
     xml=fread(fit,'*char');
     xml = xml';
     fclose(fit);
@@ -11,13 +21,3 @@ function info = ImportSvarogXML(nazwa)
     info.samplecount = str2double(samplecount{1});
     firstsampletimestamp = regexp(xml, '<rs:firstSampleTimestamp>(.*?)</rs:firstSampleTimestamp>', 'tokens');
     info.firstsampletimestamp = str2double(firstsampletimestamp{1});
-
-
-function dane = ImportSvarogRAW(nazwa)
-    fit = fopen([nazwa '.raw'], 'rb');
-    dane = fread(fit, 'double');
-    fclose(fit);
-    dane = reshape(dane, [info.numchans,info.samplecount]);
-
-
-
