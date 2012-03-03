@@ -21,3 +21,6 @@ function info = sv_info(file_name)
     info.samplecount = str2double(samplecount{1});
     firstsampletimestamp = regexp(xml, '<rs:firstSampleTimestamp>(.*?)</rs:firstSampleTimestamp>', 'tokens');
     info.firstsampletimestamp = str2double(firstsampletimestamp{1});
+    calibration = regexp(xml, '<rs:calibrationParam>(.*?)</rs:calibrationParam>', 'tokens');
+    info.gain = calibration{1:info.numchans};
+    info.offset = calibration{info.numchans+1:info.numchans*2};

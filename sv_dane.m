@@ -13,3 +13,4 @@ function dane = sv_dane(file_name)
     dane = fread(fit, 'double');
     fclose(fit);
     dane = reshape(dane, [info.numchans,info.samplecount]);
+    dane = (dane.*info.gain) + info.offset;
