@@ -10,8 +10,9 @@ data = sv_data(file_name);
 info = sv_info(file_name);
 
 [ALLEEG EEG CURRENTSET ALLCOM] = eeglab;
-EEG = pop_importdata('data', data, 'dataformat', 'array', 'srate', info.sf);
+EEG = pop_importdata('data', data, 'dataformat', 'array', 'srate', info.fs);
 %chanlocs = struct('labels', { 'cz' 'c3' 'c4' 'pz' 'p3' 'p4' 'fz' 'f3' 'f4'}); >> pop_chanedit( chanlocs );
-EEG.chanlocs = pop_chanedit('labels', info.channels);
+chanlocs = struct('labels', info.channames);
+EEG.chanlocs = pop_chanedit(chanlocs);
 [ALLEEG EEG CURRENTSET ] = eeg_store(ALLEEG, EEG);
 eeglab redraw
