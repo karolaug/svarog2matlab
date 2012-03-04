@@ -7,17 +7,18 @@
 
 
 
-function data = sv_data(file_name, info)
+function data = sv_data(file_name, info);
     fit = fopen([file_name '.raw'], 'rb');
     data = fread(fit, 'double');
     fclose(fit);
     data = reshape(data, [info.numchans,info.samplecount]);
+    %FIXME
     gain = zeros(info.numchans, info.samplecount);
     offset = zeros(info.numchans, info.samplecount);
     for i=1:info.numchans;
 	gain(i,:) = info.gain(i);
 	offset(i,:) = info.offset(i);
-    end
+    end;
     data = (data.*gain) + offset;
 
 

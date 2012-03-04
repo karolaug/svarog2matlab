@@ -8,7 +8,7 @@
 
 
 
-function info = sv_info(file_name)
+function info = sv_info(file_name);
     fit = fopen([file_name '.xml'],'rb');
     xml=fread(fit,'*char');
     xml = xml';
@@ -32,5 +32,3 @@ function info = sv_info(file_name)
     end;
     info.gain = calib(1:info.numchans)';
     info.offset = calib(info.numchans+1:info.numchans*2)';
-
-
