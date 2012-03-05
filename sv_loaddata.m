@@ -6,7 +6,7 @@
 %License can be found in license
 
 
-
+%Returns info variable and data matrix. Takes filename without extension as argument.
 function [info, data] = sv_loaddata(file_name);
     info = sv_info(file_name);
     data = sv_data(file_name, info);
