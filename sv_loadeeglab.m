@@ -6,6 +6,6 @@
 %License can be found in license
 
 %Loads eeglab with data from sv_data matrix and sv_info variable, supports channel location. Takes filename without extension as argument.
-function sv_loadeeglab(filename);
+function sv_loadeeglab(file_name);
     [info, data] = sv_loaddata(file_name);
     sv_loadeeg(info, data)
