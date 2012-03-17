@@ -6,7 +6,7 @@
 %License can be found in license
 
 %Loads eeglab with data from sv_data matrix and sv_info variable, supports channel location. Takes filename without extension as argument.
-function sv_loadeeg(info, data);
+function sv_loadeeglab(info, data);
     %[info, data] = sv_loaddata(file_name);
     global ALLEEG EEG CURRENTSET ALLCOM
     [ALLEEG EEG CURRENTSET ALLCOM] = eeglab;

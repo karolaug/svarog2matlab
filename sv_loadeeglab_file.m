@@ -5,14 +5,7 @@
 %Copyright © 2012 Karol Augustin
 %License can be found in license
 
-
-
-function data = sig2trigg_kus(info, data, chan, tre)
-  if nargin == 3,
-  tre = 0.3;
-end;
-  q = find(data(chan,1:end-1)-data(chan,2:end)<(min(data(chan,1:end))-max(data(chan,1:end)))/4);
-  u = find(q(2:end) - q(1:end-1)<tre*info.fs);
-  q(u) = [];
-  data(chan,1:end) = 0;
-  data(chan,q) = 1;
+%Loads eeglab with data from sv_data matrix and sv_info variable, supports channel location. Takes filename without extension as argument.
+function sv_loadeeglab_file(file_name);
+    [info, data] = sv_loaddata(file_name);
+    sv_loadeeglab(info, data)
