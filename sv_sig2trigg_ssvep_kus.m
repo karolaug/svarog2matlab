@@ -16,13 +16,13 @@ function data = sv_sig2trigg_ssvep_kus(info, data, chan, file_name, tre, tre2);
     if nargin == 5,
 	tre2 = 5.5;
     end
-    freq = importdata([file_name '.txt']);
+    freq = sv_loadfreq(file_name);
     data = sv_sig2trigg_kus(info, data, chan, tre);
     q = find(data(30,:)>0);
-    z = 0
+    z = 0;
     for i=1:max(size(data(chan,:)));
 	if data(chan,i) > 0,
-	    z = z + 1
+	    z = z + 1;
 	    data(chan,i) = freq(z);
 	    data(chan,i+1:i+1+(tre2*info.fs)) = 0;
 	end
