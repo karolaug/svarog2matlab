@@ -7,7 +7,7 @@
 
 
 
-function data = sig2trigg_kus(info, data, chan, tre)
+function data = sv_sig2trigg_kus(info, data, chan, tre)
     if nargin == 3,
 	tre = 0.3;
     end;
