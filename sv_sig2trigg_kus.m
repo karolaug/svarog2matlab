@@ -8,11 +8,11 @@
 
 
 function data = sig2trigg_kus(info, data, chan, tre)
-  if nargin == 3,
-  tre = 0.3;
-end;
-  q = find(data(chan,1:end-1)-data(chan,2:end)<(min(data(chan,1:end))-max(data(chan,1:end)))/4);
-  u = find(q(2:end) - q(1:end-1)<tre*info.fs);
-  q(u) = [];
-  data(chan,1:end) = 0;
-  data(chan,q) = 1;
+    if nargin == 3,
+	tre = 0.3;
+    end;
+    q = find(data(chan,1:end-1)-data(chan,2:end)<(min(data(chan,1:end))-max(data(chan,1:end)))/4);
+    u = find(q(2:end) - q(1:end-1)<tre*info.fs);
+    q(u) = [];
+    data(chan,1:end) = 0;
+    data(chan,q) = 1;

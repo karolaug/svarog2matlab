@@ -6,13 +6,14 @@
 %License can be found in license
 
 %Loads eeglab with data from sv_data matrix and sv_info variable, supports channel location. Takes filename without extension as argument.
-function sv_loadeeglab(info, data);
-    %[info, data] = sv_loaddata(file_name);
-    global ALLEEG EEG CURRENTSET ALLCOM
-    [ALLEEG EEG CURRENTSET ALLCOM] = eeglab;
-    global EEG
-    EEG = pop_importdata('data', data, 'dataformat', 'array', 'srate', info.fs);
-    chanlocs = struct('labels', info.channames);
-    EEG.chanlocs = pop_chanedit(chanlocs);
-    [ALLEEG EEG CURRENTSET ] = eeg_store(ALLEEG, EEG);
-    eeglab redraw;
+function info, data = sv_loadeeg_ssvep(file_name, chan, tre, tre2);
+    if nargin == 2,
+	tre = 0.02;
+	tre2 = 5.5;
+    end
+    if nargin == 3,
+	tre2 = 5.5;
+    end
+    [info, data] = sv_loaddata(file_name);
+    data = sv_sig2trigg_ssvep_kus(info, data, chan, file_name, tre, tre2);
+    sv_loadeeg(info, data);

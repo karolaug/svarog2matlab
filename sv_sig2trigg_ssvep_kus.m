@@ -27,7 +27,3 @@ function data = sv_sig2trigg_ssvep_kus(info, data, chan, file_name, tre, tre2);
 	    data(chan,i+1:i+1+(tre2*info.fs)) = 0;
 	end
     end
-    %q = find(data(30,:)>0);
-    %for i=1:max(size(q));
-%	data(chan,q(i)) = freq(i);
-%    end
