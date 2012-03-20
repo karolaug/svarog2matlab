@@ -6,12 +6,12 @@
 %License can be found in license
 
 
-function data2 = sv_ssvep_matrix(file_name, chan, tre, tre2);
-    if nargin == 2,
+function data2 = sv_ssvep_matrix(file_name, chan, time, tre, tre2);
+    if nargin == 3,
 	tre = 0.02;
 	tre2 = 5.5;
     end
-    if nargin == 3,
+    if nargin == 4,
 	tre2 = 5.5;
     end
     info = sv_info(file_name);
@@ -22,6 +22,6 @@ function data2 = sv_ssvep_matrix(file_name, chan, tre, tre2);
     for i=1:max(size(freq)),
 	I = find(data(chan,:) == freq(i));
 	for o=1:max(size(I)),
-	    data2(i,o,:,:) = data(:,I(o)-2*info.fs:I(o)+7*info.fs);
+	    data2(i,o,:,:) = data(:,I(o)+time(1)*info.fs:I(o)+time(2)*info.fs);
 	end
     end
