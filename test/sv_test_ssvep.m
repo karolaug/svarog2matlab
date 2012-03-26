@@ -5,8 +5,8 @@ addpath('/home/karolaug/Work/tf/');
 
 freq = sv_loadfreq('jaroslaw-rybusinski-ssvep-1');
 unique(freq)
-freq_from = 3;
-freq_to = 60;
+freq_from = 15;
+freq_to = 30;
 channel_analyze = 6;
 freq_analyze = 6;
 fs = 1024;
