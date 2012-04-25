@@ -18,7 +18,7 @@ function data = sv_sig2trigg_ssvep_kus(info, data, chan, file_name, tre, tre2);
     end
     freq = sv_loadfreq(file_name);
     data = sv_sig2trigg_kus(info, data, chan, tre);
-    q = find(data(30,:)>0);
+    q = find(data(chan,:)>0);
     z = 0;
     for i=1:max(size(data(chan,:)));
 	if data(chan,i) > 0,
