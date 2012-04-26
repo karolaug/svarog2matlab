@@ -12,14 +12,7 @@ function data = sv_data(file_name, info);
     data = fread(fit, 'double');
     fclose(fit);
     data = reshape(data, [info.numchans,info.samplecount]);
-    %FIXME
-    gain = zeros(info.numchans, info.samplecount);
-    offset = zeros(info.numchans, info.samplecount);
-    for i=1:info.numchans;
-	gain(i,:) = info.gain(i);
-	offset(i,:) = info.offset(i);
-    end;
-    data = (data.*gain) + offset;
-
+    data = bsxfun(@times, data, info.gain);
+    data = bsxfun(@plus, data, info.offset);
 
 
