@@ -7,8 +7,8 @@
 
 
 
-%Function analizes data for SSVEP experiment paradigm, where diode was also plugged in to the amplifier channel.
-function data = sv_sig2trigg_ssvep_kus(info, data, chan, file_name, tre, tre2);
+%Function analizes trigger data for SSVEP experiment paradigm, where diode was also plugged in to the amplifier channel.
+function data = sv_sig2trigg_ssvep_kus(info, data, chan, freq, tre, tre2);
     if nargin == 4,
 	tre = 0.02;
 	tre2 = 5.5;
@@ -16,7 +16,6 @@ function data = sv_sig2trigg_ssvep_kus(info, data, chan, file_name, tre, tre2);
     if nargin == 5,
 	tre2 = 5.5;
     end
-    freq = sv_loadfreq(file_name);
     data = sv_sig2trigg_kus(info, data, chan, tre);
     q = find(data(chan,:)>0);
     z = 0;
