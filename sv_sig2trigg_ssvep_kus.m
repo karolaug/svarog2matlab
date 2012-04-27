@@ -6,6 +6,7 @@
 %License can be found in license
 
 %Function analizes trigger data for SSVEP experiment paradigm, where diode was also plugged in to the amplifier channel.
+%Thre and thre2 parameters are optional. Thre parameter defines min time between two diode blinks and thre2 the time of stimulation.
 function data = sv_sig2trigg_ssvep_kus(info, data, chan, freq, tre, tre2);
     if nargin == 4,
 	tre = 0.02;

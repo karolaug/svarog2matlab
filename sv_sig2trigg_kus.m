@@ -6,6 +6,7 @@
 %License can be found in license
 
 %Function changes trigger chanel that has real values. It changes real values recorded by an ordinary amplifier channel to dirac's delta localized at the beginning of each trigger instance.
+%Thre variable is the min time between two trigger instances in seconds. This parameter is optional and if not set, takes default value of 0.3 seconds.
 function data = sv_sig2trigg_kus(info, data, chan, tre)
     if nargin == 3,
 	tre = 0.3;

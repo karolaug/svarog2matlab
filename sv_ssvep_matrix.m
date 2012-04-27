@@ -5,7 +5,7 @@
 %Copyright © 2012 Karol Augustin
 %License can be found in license
 
-%Function returns data prepared for analisys for SSVEP experiment paradigm, assuming that blinking diode was also plugged to the amplifier and frequencies of stimulation where put in the filename with txt extension in order they appeared in experiment.
+%Function returns data prepared for analisys for SSVEP experiment paradigm, assuming that blinking diode was also plugged to the amplifier and frequencies of stimulation where put in the filename with txt extension in order they appeared in experiment.Time is parameter how many seconds before and after begin of stimulation data will be taken for analisys in eeglab-like format. For example to take one second of reference signal before begin of stimulation and 5 sec after you have to set time = [-1, 6].
 function data2 = sv_ssvep_matrix(file_name, chan, time, tre, tre2);
     if nargin == 3,
 	tre = 0.02;
