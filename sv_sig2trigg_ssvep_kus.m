@@ -5,8 +5,6 @@
 %Copyright © 2012 Karol Augustin
 %License can be found in license
 
-
-
 %Function analizes trigger data for SSVEP experiment paradigm, where diode was also plugged in to the amplifier channel.
 function data = sv_sig2trigg_ssvep_kus(info, data, chan, freq, tre, tre2);
     if nargin == 4,

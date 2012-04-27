@@ -5,8 +5,6 @@
 %Copyright © 2012 Karol Augustin
 %License can be found in license
 
-
-
 %Returns info variable with information from xml file. Takes filename without extension as argument.
 function info = sv_info(file_name);
     fit = fopen([file_name '.xml'],'rb');

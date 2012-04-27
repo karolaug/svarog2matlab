@@ -5,7 +5,6 @@
 %Copyright © 2012 Karol Augustin
 %License can be found in license
 
-
 %Function changes trigger chanel that has real values. It changes real values recorded by an ordinary amplifier channel to dirac's delta localized at the beginning of each trigger instance.
 function data = sv_sig2trigg_kus(info, data, chan, tre)
     if nargin == 3,
