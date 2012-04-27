@@ -6,7 +6,7 @@
 %License can be found in license
 
 
-
+%Functions takes data matrix and number of boolean trigger channel and returns the same data matrix witch modified trigger channel. It assumes, that trigger takes values (0,1) and changes every instance for Dirac's delta localized in the first sample of each instance.
 function data = sv_sig2trigg_bool(data, chan)
     q = find(data(chan,1:end-1)-data(chan,2:end)==-1);
     data(chan,:) = 0;

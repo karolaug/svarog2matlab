@@ -5,7 +5,7 @@
 %Copyright © 2012 Karol Augustin
 %License can be found in license
 
-%Loads eeglab with data from sv_data matrix and sv_info variable, supports channel location. Takes filename without extension as argument.
+%Loads eeglab with data from sv_data matrix and sv_info variable, pushes channel names to eeglab. info and data variables can be taken from sv_info and sv_data functions separately or from sv_loaddata function in one move.
 function sv_loadeeg(info, data);
     global ALLEEG EEG CURRENTSET ALLCOM
     [ALLEEG EEG CURRENTSET ALLCOM] = eeglab;

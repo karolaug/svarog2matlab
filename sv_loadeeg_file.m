@@ -5,7 +5,7 @@
 %Copyright © 2012 Karol Augustin
 %License can be found in license
 
-%Loads eeglab with data from sv_data matrix and sv_info variable, supports channel location. Takes filename without extension as argument.
+%Loads eeglab with data from raw and xml files. Takes filename without extension as argument refer to sv_loaddata and sv_loadeeg functions for details.
 function sv_loadeeg_file(file_name);
     [info, data] = sv_loaddata(file_name);
     sv_loadeeg(info, data)

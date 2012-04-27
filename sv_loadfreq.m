@@ -6,6 +6,6 @@
 %License can be found in license
 
 
-%Returns info variable and data matrix. Takes filename without extension as argument.
+%Function returns list of frequencies saved in text file. It was intended to use with SSVEP paradigm experiment analysis. As it's rather straightforward it's not longer required and it's kept here for revers compatibility reasons.
 function freq = sv_loadfreq(file_name);
     freq = importdata([file_name '.txt']);

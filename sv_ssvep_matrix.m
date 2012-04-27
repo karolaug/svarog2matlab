@@ -5,7 +5,7 @@
 %Copyright © 2012 Karol Augustin
 %License can be found in license
 
-
+%Function returns data prepared for analisys for SSVEP experiment paradigm, assuming that blinking diode was also plugged to the amplifier and frequencies of stimulation where put in the filename with txt extension in order they appeared in experiment.
 function data2 = sv_ssvep_matrix(file_name, chan, time, tre, tre2);
     if nargin == 3,
 	tre = 0.02;

@@ -6,7 +6,7 @@
 %License can be found in license
 
 
-%Returns two-dimensional data matrix of size (number-of-channels, number-of-samples). Takes filename without extension as argument.
+%Returns two-dimensional data matrix of size (number-of-channels, number-of-samples). Takes filename without extension and info variable from sv_info output as arguments.
 function data = sv_data(file_name, info);
     fit = fopen([file_name '.raw'], 'rb');
     data = fread(fit, 'double');
