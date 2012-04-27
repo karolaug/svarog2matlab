@@ -2,7 +2,7 @@
 %it under the terms of the GNU General Public License as published by
 %the Free Software Foundation, either version 3 of the License, or
 %(at your option) any later version.
-%Copyright © 2012 Karol Augustin
+%Copyright © 2012 Karol Augustin <karol@augustin.pl>
 %License can be found in license
 
 %Returns two-dimensional data matrix of size (number-of-channels, number-of-samples). Takes filename without extension and info variable from sv_info output as arguments.

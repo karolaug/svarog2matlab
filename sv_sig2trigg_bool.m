@@ -2,7 +2,7 @@
 %it under the terms of the GNU General Public License as published by
 %the Free Software Foundation, either version 3 of the License, or
 %(at your option) any later version.
-%Copyright © 2012 Karol Augustin
+%Copyright © 2012 Karol Augustin <karol@augustin.pl>
 %License can be found in license
 
 %Function takes data matrix and number of boolean trigger channel and returns the same data matrix witch modified trigger channel. It assumes, that trigger takes values (0,1) and changes every instance to Dirac's delta localized in the first sample of each instance.

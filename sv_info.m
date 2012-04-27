@@ -2,7 +2,7 @@
 %it under the terms of the GNU General Public License as published by
 %the Free Software Foundation, either version 3 of the License, or
 %(at your option) any later version.
-%Copyright © 2012 Karol Augustin
+%Copyright © 2012 Karol Augustin <karol@augustin.pl>
 %License can be found in license
 
 %Returns info variable with information from xml file. Takes filename without extension as argument.
