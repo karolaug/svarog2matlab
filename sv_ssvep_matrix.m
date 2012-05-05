@@ -16,7 +16,7 @@ function data2 = sv_ssvep_matrix(file_name, chan, time, tre, tre2);
     end
     info = sv_info(file_name);
     data = sv_data(file_name, info);
-    freq = loaddata([file_name '.txt']);
+    freq = importdata([file_name '.txt']);
     data = sv_sig2trigg_ssvep_kus(info, data, chan, freq, tre, tre2);
     freq = unique(freq);
     for i=1:max(size(freq)),
